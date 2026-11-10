@@ -176,6 +176,17 @@ audio {
     margin: 15px auto;
 }
 
+.letter-music-player {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(340px, calc(100% - 120px));
+    z-index: 10;
+    margin: 0;
+    accent-color: #d94f85;
+}
+
 @media (max-width: 480px) {
     .card {
         padding: 20px 16px;
@@ -199,6 +210,13 @@ audio {
 
 <body>
 
+<!-- BACKGROUND MUSIC FOR BOTH LETTERS -->
+<audio id="letterMusic" class="letter-music-player"
+       controls loop preload="none" style="display:none;">
+    <source src="assets/love-piano.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+</audio>
+
 <!-- SLIDE 1: WELCOME -->
 <section class="slide active">
     <div class="card center-text">
@@ -213,13 +231,12 @@ audio {
     </div>
 </section>
 
-<!-- SLIDE 2: ORIGINAL APOLOGY LETTER -->
+<!-- SLIDE 2: APOLOGY LETTER -->
 <section class="slide">
     <div class="card">
         <h2>To My Man, My Charan ❤️</h2>
 
         <div class="message">
-
             <p>My love,</p>
 
             <p>Before anything else, I want to say <strong>I'm genuinely sorry.</strong></p>
@@ -243,20 +260,18 @@ audio {
             <p>Here's a little piece of my heart, made just for you.</p>
 
             <p><strong>Your girl, always. ❤️ Apneet</strong></p>
-
         </div>
 
         <button onclick="nextSlide()">Next 💌</button>
     </div>
 </section>
 
-<!-- SLIDE 3: ORIGINAL LOVE LETTER -->
+<!-- SLIDE 3: LOVE LETTER -->
 <section class="slide">
     <div class="card">
         <h2>A Little Love Note for My Favourite Person 💌</h2>
 
         <div class="message">
-
             <p>Heyyy, my man, my Charan! ❤️</p>
 
             <p>If I could, I would wrap all my love into a big hug and send it straight to you.</p>
@@ -283,7 +298,6 @@ audio {
             <p>Forever your girl,</p>
 
             <p><strong>Apneet ❤️</strong></p>
-
         </div>
 
         <button onclick="nextSlide()">Next, My Love 😘</button>
@@ -352,6 +366,28 @@ let currentSlide = 0;
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
 const kissAudio = document.getElementById("kissAudio");
+const letterMusic = document.getElementById("letterMusic");
+
+function updateLetterMusic(index) {
+    const onLetterSlide = index === 1 || index === 2;
+
+    letterMusic.style.display = onLetterSlide ? "block" : "none";
+
+    if (!onLetterSlide) {
+        letterMusic.pause();
+
+        if (index === 0 || index === 3 || index === 4) {
+            letterMusic.currentTime = 0;
+        }
+    } else {
+        letterMusic.volume = 0.25;
+
+        // The visitor can use the visible audio controls
+        // to play, pause, seek and change the volume.
+        // Browsers may require the visitor to press Play.
+        letterMusic.play().catch(() => {});
+    }
+}
 
 function showSlide(index) {
     slides.forEach((slide, i) => {
@@ -363,6 +399,7 @@ function showSlide(index) {
     });
 
     currentSlide = index;
+    updateLetterMusic(index);
 
     if (index !== 3) {
         kissAudio.pause();
