@@ -4,452 +4,436 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Little Surprise for Charan ❤️</title>
+<title>A Surprise for My Charan ❤️</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-
-*{box-sizing:border-box}
-
-body{
- margin:0;
- min-height:100vh;
- font-family:'DM Sans',sans-serif;
- background:linear-gradient(135deg,#fff0f5,#ffe0eb,#fff7fa);
- color:#71394e;
- display:flex;
- align-items:center;
- justify-content:center;
- padding:20px;
- overflow-x:hidden;
+* {
+    box-sizing: border-box;
 }
 
-.hearts{
- position:fixed;
- inset:0;
- pointer-events:none;
- overflow:hidden;
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Georgia, 'Times New Roman', serif;
+    background: linear-gradient(135deg, #ffe0eb, #ffc2d8, #fff0f5);
+    color: #8d3157;
+    overflow: hidden;
 }
 
-.heart{
- position:absolute;
- bottom:-40px;
- animation:floatUp 9s linear infinite;
- opacity:.55;
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 20px;
+    animation: floatUp 8s linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
 }
 
-@keyframes floatUp{
- to{transform:translateY(-115vh) rotate(30deg);opacity:0}
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% { opacity: 0.7; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 
-.container{
- width:100%;
- max-width:680px;
- position:relative;
- z-index:2;
+.slide {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    padding: 25px 16px 85px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
-.slide{
- display:none;
- background:#ffffffed;
- border:1px solid #f4cbd9;
- border-radius:28px;
- padding:clamp(24px,6vw,48px);
- text-align:center;
- box-shadow:0 15px 55px #a84e7020;
- animation:appear .55s ease;
+.slide.active {
+    display: flex;
 }
 
-.slide.active{display:block}
-
-@keyframes appear{
- from{opacity:0;transform:translateY(18px) scale(.98)}
- to{opacity:1;transform:none}
+.card {
+    background: rgba(255,255,255,0.88);
+    width: 100%;
+    max-width: 650px;
+    max-height: calc(100vh - 120px);
+    padding: 28px;
+    border-radius: 25px;
+    box-shadow: 0 8px 30px rgba(160, 55, 100, 0.15);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
-h1,h2{
- font-family:'Playfair Display',serif;
- color:#a34468;
+h1 {
+    font-size: 30px;
+    margin: 0 0 18px;
+    color: #c04475;
 }
 
-h1{font-size:clamp(32px,7vw,48px);margin:12px 0}
-h2{font-size:clamp(27px,6vw,36px);margin:12px 0 18px}
-
-p{font-size:16px;line-height:1.9}
-
-.big-emoji{font-size:65px;margin:8px}
-.small{color:#a66c81;font-size:14px}
-
-.letter{
- background:#fff5f8;
- border-radius:18px;
- padding:22px;
- text-align:left;
- line-height:1.9;
- margin:20px 0;
+h2 {
+    font-size: 25px;
+    color: #c04475;
+    margin: 0 0 15px;
 }
 
-button{
- border:0;
- border-radius:999px;
- padding:14px 27px;
- margin:8px;
- background:#d85f89;
- color:white;
- font-weight:700;
- font-size:15px;
- cursor:pointer;
- box-shadow:0 6px 16px #d85f8930;
- transition:.2s;
+p {
+    line-height: 1.7;
 }
 
-button:hover{
- transform:translateY(-3px);
- background:#bd4772;
+.message {
+    overflow-y: auto;
+    text-align: left;
+    padding: 5px 12px 15px 5px;
+    font-size: 17px;
+    line-height: 1.75;
+    scrollbar-color: #e89ab8 #fff0f5;
+    scrollbar-width: thin;
 }
 
-button.secondary{
- background:#f8dce7;
- color:#99415f;
+.message p {
+    margin: 0 0 15px;
 }
 
-.progress{
- display:flex;
- justify-content:center;
- gap:9px;
- margin:0 0 18px;
+.message strong {
+    color: #b73569;
 }
 
-.dot{
- width:9px;
- height:9px;
- border-radius:50%;
- background:#edc6d5;
+.center-text {
+    text-align: center;
 }
 
-.dot.active{
- background:#cf5680;
- width:25px;
- border-radius:10px;
+.big-heart {
+    font-size: 65px;
+    margin: 10px;
 }
 
-.hug{
- font-size:100px;
- display:inline-block;
- animation:embrace 1.5s ease-in-out infinite alternate;
+button {
+    border: none;
+    background: #d94f85;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 8px auto 0;
+    font-family: inherit;
+    flex-shrink: 0;
 }
 
-@keyframes embrace{
- from{transform:scale(1)}
- to{transform:scale(1.13) rotate(-4deg)}
+button:hover {
+    background: #b9366d;
+    transform: scale(1.03);
 }
 
-.kiss{
- font-size:85px;
- display:inline-block;
- animation:kiss 1.2s ease-in-out infinite;
+.navigation {
+    position: fixed;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
 }
 
-@keyframes kiss{
- 50%{transform:scale(1.2) rotate(8deg)}
+.dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
 
-.welcome-heart{
- font-size:90px;
- animation:heartbeat 1.3s infinite;
- display:inline-block;
+.dot {
+    width: 9px;
+    height: 9px;
+    background: #e8a4bd;
+    border-radius: 50%;
 }
 
-@keyframes heartbeat{
- 50%{transform:scale(1.18)}
+.dot.active {
+    background: #bd386e;
+    transform: scale(1.3);
 }
 
-.footer{
- font-size:13px;
- color:#b17b90;
- margin-top:22px;
+.hug {
+    font-size: 100px;
+    animation: hug 1.5s ease-in-out infinite;
 }
 
+@keyframes hug {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+.small-note {
+    font-size: 15px;
+    color: #a14c70;
+}
+
+audio {
+    width: 100%;
+    margin: 15px auto;
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 20px 16px;
+        max-height: calc(100vh - 105px);
+    }
+
+    h1 { font-size: 25px; }
+    h2 { font-size: 22px; }
+
+    .message {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .slide {
+        padding: 15px 12px 75px;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<div class="hearts" id="hearts"></div>
-
-<div class="container">
-
-<div class="progress">
- <span class="dot active"></span>
- <span class="dot"></span>
- <span class="dot"></span>
- <span class="dot"></span>
- <span class="dot"></span>
-</div>
+<div id="hearts"></div>
 
 <!-- SLIDE 1: WELCOME -->
-
 <section class="slide active">
-
- <div class="welcome-heart">💗</div>
-
- <p class="small">A little surprise made with love</p>
-
- <h1>Heyyy, My Love!</h1>
-
- <p>
- I have something special for you,
- my favourite person...
- </p>
-
- <p>
- It's a little piece of my heart,
- made just for you. ❤️
- </p>
-
- <h2>Are You Ready? 🥺</h2>
-
- <p class="small">
- Take a deep breath and open your surprise...
- </p>
-
- <button onclick="nextSlide(1)">
- Open My Surprise ❤️
- </button>
-
+    <div class="card center-text">
+        <div class="big-heart">💗</div>
+        <h1>Heyyy, My Love!</h1>
+        <p style="font-size:19px;">
+            My favourite person, my man, my Charan! ❤️
+        </p>
+        <p>
+            I made a little something for you, with all my love.
+        </p>
+        <h2>Are You Ready? 🥺</h2>
+        <button onclick="nextSlide()">Open My Surprise ❤️</button>
+    </div>
 </section>
 
-
-<!-- SLIDE 2: APOLOGY -->
-
+<!-- SLIDE 2: APOLOGY LETTER -->
 <section class="slide">
+    <div class="card">
+        <h2>To My Man, My Charan ❤️</h2>
 
- <div class="big-emoji">🥺💗</div>
+        <div class="message">
+            <p>My love,</p>
 
- <p class="small">A little something from your girl</p>
+            <p>Before anything else, I want to say <strong>I'm genuinely sorry.</strong></p>
 
- <h1>I'm Sorry, My Charan</h1>
+            <p>
+            I know that sometimes my emotions become stronger than my ability to think clearly. I overthink, I react, and in those moments I may say or do things that hurt you. Today, I realise that I hurt someone who means so much to me, and that is something I never wanted to do.
+            </p>
 
- <div class="letter">
+            <p>
+            I am not writing this to justify my behaviour or make excuses. I want to take responsibility for it.
+            </p>
 
- Hey my love,<br><br>
+            <p>
+            I know loving someone is not just about saying "I love you." It's also about understanding, patience, respect, trust and making an effort to become better together.
+            </p>
 
- I know that sometimes my emotions take over my thoughts.
- I overthink, react without thinking everything through, and
- sometimes end up hurting you. I'm truly sorry for those moments.<br><br>
+            <p>
+            I don't want my fears, overthinking or emotional reactions to become a reason for you to feel hurt or exhausted. I want to learn to communicate better, listen more, understand you and handle my emotions in a healthier way.
+            </p>
 
- I don't want to make excuses for my actions. I want to take
- responsibility and genuinely work on myself. I know I won't
- become perfect overnight, but I promise to keep trying,
- understanding you better and becoming a better partner.<br><br>
+            <p>
+            <strong>I cannot promise that I'll become perfect overnight, but I can promise that I'll genuinely work on myself.</strong> Not just through words, but through my actions.
+            </p>
 
- You matter to me, and so does the happiness and peace we
- share. I hope we keep learning and growing together. ❤️<br><br>
+            <p>
+            You deserve love that feels peaceful, safe and understanding. And I want to become someone who adds happiness to your life, not unnecessary pain.
+            </p>
 
- <strong>Your girl, Apneet ❤️</strong>
+            <p>I'm sorry for the times I made things difficult for you.</p>
 
- </div>
+            <p>
+            I love you, and I don't want us to forget that we're on the same team.
+            </p>
 
- <button onclick="nextSlide(2)">
- A little more for you 💌
- </button>
+            <p>Here's a little piece of my heart, made just for you.</p>
 
+            <p><strong>Your girl, always. ❤️</strong></p>
+        </div>
+
+        <button onclick="nextSlide()">Next 💌</button>
+    </div>
 </section>
 
-
-<!-- SLIDE 3: LOVE NOTE -->
-
+<!-- SLIDE 3: LOVE LETTER -->
 <section class="slide">
+    <div class="card">
+        <h2>A Little Love Note for My Favourite Person 💌</h2>
 
- <div class="big-emoji">💌🌷</div>
+        <div class="message">
+            <p>Heyyy, my man, my Charan! ❤️</p>
 
- <p class="small">A letter straight from my heart</p>
+            <p>
+            If I could, I would wrap all my love into a big hug and send it straight to you.
+            </p>
 
- <h2>My Favourite Person</h2>
+            <p>
+            You have become such a special part of my life. Even the smallest moments with you mean so much to me. Your smile, your hugs, your kisses, the way you look at me and all those little things you probably don't even realise I notice.
+            </p>
 
- <div class="letter">
+            <p>
+            I don't know what the future holds for us, but I know that I want to make beautiful memories with you. I want silly conversations, random pictures, unexpected hugs, endless kisses, little dates and a thousand reasons to smile together.
+            </p>
 
- Heyyy, my favourite person… ❤️<br><br>
+            <p>
+            I want to be your safe place, your biggest supporter and the girl who keeps reminding you how loved you are.
+            </p>
 
- If I could, I would wrap all my love into the biggest hug and
- send it straight to you. I love our little moments, our silly
- conversations, your smile, your hugs and the way a simple
- moment with you can make my whole day.<br><br>
+            <p>
+            And whenever life gets difficult, I hope we remember that it's never you against me. It's always us against the problem.
+            </p>
 
- I don't need every day to be perfect. I just want us to keep
- understanding each other, choosing each other and making
- beautiful memories together. I want to celebrate your wins,
- support you on difficult days and keep finding reasons to
- laugh with you.<br><br>
+            <p>So here's a little reminder:</p>
 
- Even when I don't express it perfectly, please know that you
- are loved. So, here's a pocketful of kisses, a lifetime supply
- of hugs and one very clingy girl cheering for you. 😚<br><br>
+            <p>💗 You are special to me.</p>
+            <p>🧸 You deserve the warmest hugs.</p>
+            <p>😘 You owe me unlimited kisses.</p>
+            <p>🌷 And you have a girl who is trying every day to love you better.</p>
 
- I'm so lucky to have you in my little world. I love you,
- my Charan. ❤️<br><br>
+            <p>
+            <strong>Sending you one virtual hug, a thousand kisses and all my love.</strong>
+            </p>
 
- — Your girl, Apneet 💋
+            <p>Mwahhhhh! 😘💋</p>
 
- </div>
+            <p>Forever your girl,</p>
 
- <button onclick="nextSlide(3)">
- I have a kiss for you 😘
- </button>
+            <p><strong>Apneet ❤️</strong></p>
+        </div>
 
+        <button onclick="nextSlide()">Next, My Love 😘</button>
+    </div>
 </section>
 
-
-<!-- SLIDE 4: KISS -->
-
+<!-- SLIDE 4: PERSONAL KISS AUDIO -->
 <section class="slide">
+    <div class="card center-text">
+        <div class="big-heart">😘💋</div>
+        <h1>A Kiss For You!</h1>
 
- <div class="big-emoji">💕</div>
+        <p>
+            Since I cannot send you unlimited kisses through this screen,
+            here's a little one from me.
+        </p>
 
- <p class="small">Something special, just for you</p>
+        <audio id="kissAudio" controls preload="auto">
+            <source src="assets/kiss.mp3" type="audio/mpeg">
+            Your browser does not support audio.
+        </audio>
 
- <h2>Close Your Eyes...</h2>
+        <p class="small-note">Close your eyes and listen, my love. ❤️</p>
 
- <div class="kiss">😘</div>
-
- <p>
- Imagine me giving you the sweetest little kiss.
- </p>
-
- <p>
- And here's the real one, recorded just for you.
- </p>
-
- <button onclick="playKiss()">
- Play My Kiss 💋
- </button>
-
- <p class="small" id="audioStatus">
- Tap to hear your little surprise.
- </p>
-
- <audio id="kissAudio" src="assets/kiss.mp3" preload="auto"></audio>
-
- <button class="secondary" onclick="nextSlide(4)">
- One Last Surprise 🫂
- </button>
-
+        <button onclick="nextSlide()">One More Surprise 🤗</button>
+    </div>
 </section>
-
 
 <!-- SLIDE 5: HUG -->
-
 <section class="slide">
+    <div class="card center-text">
+        <h1>A Big Hug For My Man!</h1>
 
- <div class="big-emoji">💗✨</div>
+        <div class="hug">🫂</div>
 
- <p class="small">The last little surprise</p>
+        <p style="font-size:21px;">
+            Imagine me hugging you as tightly as I possibly can!
+        </p>
 
- <h2>A Very Big Hug For You!</h2>
+        <h1>I Love You, My Charan! ❤️</h1>
 
- <div class="hug">🫂</div>
+        <p>
+            A lifetime supply of hugs, kisses and love, just for you.
+        </p>
 
- <h2>Come Here, My Love!</h2>
+        <p><strong>Forever yours, Apneet 💋</strong></p>
 
- <p>
- If I were with you right now, I'd hold you so tightly
- and never want to let go. ❤️
- </p>
-
- <p>
- Until I can hug you in person, here's an unlimited
- supply of virtual hugs and kisses.
- </p>
-
- <div class="big-emoji">🤗💋💞</div>
-
- <h1>I Love You, My Charan!</h1>
-
- <p>
- Always cheering for you, always wishing the best for you.
- </p>
-
- <p><strong>Your girl, Apneet ❤️</strong></p>
-
- <button onclick="nextSlide(0)">
- Read It All Again 💗
- </button>
-
- <div class="footer">
- Made with all my love, just for you.
- </div>
-
+        <button onclick="restart()">Replay My Surprise ❤️</button>
+    </div>
 </section>
 
+<!-- SLIDE NAVIGATION -->
+<div class="navigation">
+    <div class="dots" id="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
 </div>
 
-
 <script>
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+const kissAudio = document.getElementById("kissAudio");
 
-let current=0;
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+    });
 
-const slides=document.querySelectorAll('.slide');
-const dots=document.querySelectorAll('.dot');
+    dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+    });
 
-function nextSlide(n){
+    currentSlide = index;
 
- slides[current].classList.remove('active');
+    if (index !== 3) {
+        kissAudio.pause();
+        kissAudio.currentTime = 0;
+    }
 
- current=n;
-
- slides[current].classList.add('active');
-
- dots.forEach((dot,i)=>{
-  dot.classList.toggle('active',i===current);
- });
-
- window.scrollTo({top:0,behavior:'smooth'});
-
+    const message = slides[index].querySelector(".message");
+    if (message) {
+        message.scrollTop = 0;
+    }
 }
 
-async function playKiss(){
-
- const audio=document.getElementById('kissAudio');
- const status=document.getElementById('audioStatus');
-
- try{
-
-  audio.currentTime=0;
-
-  await audio.play();
-
-  status.textContent='A kiss, just for you! 😘❤️';
-
- }catch(error){
-
-  status.textContent='Please check that your kiss audio is uploaded in the assets folder.';
-
- }
-
+function nextSlide() {
+    if (currentSlide < slides.length - 1) {
+        showSlide(currentSlide + 1);
+    }
 }
 
-const heartBox=document.getElementById('hearts');
-
-const symbols=['💗','💕','💖','🌸','❤️','✨'];
-
-for(let i=0;i<20;i++){
-
- const heart=document.createElement('span');
-
- heart.className='heart';
-
- heart.textContent=symbols[i%symbols.length];
-
- heart.style.left=Math.random()*100+'%';
-
- heart.style.animationDelay=Math.random()*9+'s';
-
- heart.style.fontSize=(15+Math.random()*17)+'px';
-
- heartBox.appendChild(heart);
-
+function restart() {
+    showSlide(0);
 }
 
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.textContent = ["❤️", "💕", "💗", "💖", "🌸"][
+        Math.floor(Math.random() * 5)
+    ];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+    heart.style.fontSize = (15 + Math.random() * 18) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 10000);
+}
+
+setInterval(createHeart, 700);
 </script>
 
 </body>
