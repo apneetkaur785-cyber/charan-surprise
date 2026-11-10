@@ -1,26 +1,183 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Little Surprise for Charan ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Charan ❤️</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-:root{--pink:#f6a6c2;--deep:#c83e75;--ink:#704357}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:'DM Sans',sans-serif;color:var(--ink);background:radial-gradient(circle at 15% 10%,#fff 0,#fff1f6 35%,#fbd7e5 100%);overflow-x:hidden}
-main{width:min(760px,92%);margin:38px auto 60px;position:relative;z-index:1}.card{background:#ffffffdf;border:1px solid #efc0d2;border-radius:28px;padding:clamp(22px,5vw,42px);box-shadow:0 18px 55px #a9446a18;text-align:center;margin:20px 0}
-h1,h2{font-family:'Playfair Display',serif;color:#b83268}h1{font-size:clamp(2.2rem,7vw,4rem);line-height:1.13;margin:12px 0}h2{font-size:clamp(1.8rem,5vw,2.4rem);margin:0 0 12px}p{line-height:1.85}.lead{font-size:1.08rem;color:#87566b}.heart{font-size:48px;display:inline-block;animation:beat 1.1s infinite}@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.22)}30%{transform:scale(1)}}
-button{border:0;border-radius:999px;padding:15px 25px;font-size:1rem;font-weight:700;cursor:pointer;margin:8px;transition:.2s}button:hover{transform:translateY(-2px)}.primary{color:white;background:linear-gradient(100deg,#ee82a9,#ce477b);box-shadow:0 8px 20px #d94f8330}.secondary{color:#b83268;background:#fff0f6;border:1px solid #e9a7c0}.note{background:#fff8fb;border:1px dashed #e9a7c0;border-radius:20px;padding:24px;text-align:left;line-height:2;font-size:1.02rem}.note strong{color:#b83268}.hidden{display:none}.small{font-size:.88rem;color:#a0788b}.stickers{font-size:clamp(27px,5vw,42px);letter-spacing:7px;margin:14px 0;animation:wobble 3s ease-in-out infinite}@keyframes wobble{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}.float{position:fixed;bottom:-40px;z-index:0;pointer-events:none;animation:rise 8s linear forwards;opacity:.7}@keyframes rise{to{transform:translateY(-110vh) rotate(35deg);opacity:0}}#kissStatus{min-height:28px;color:#b83268}footer{text-align:center;color:#9a6b80;font-size:.85rem;margin-top:28px}.signature{text-align:right;color:#b83268;font-family:'Playfair Display',serif;font-size:1.2rem}
-</style></head><body><main>
-<section class="card" id="welcome"><div class="heart">♥</div><div class="stickers">🧸 💗 🌷</div><h1>Hey, my man…<br>my Charan ❤️</h1><p class="lead">I made a tiny little corner of the internet<br>just for you. Take a breath and open it. 💌</p><button class="primary" onclick="openSurprise()">Open your surprise 💗</button><p class="small">A little surprise, made with love.</p></section>
-<div id="surprise" class="hidden">
-<section class="card"><div class="stickers">🥺 🫶🏻 💌</div><h2>First, I'm sorry…</h2><p class="small">Please read this with an open heart.</p><div class="note">My love,<br><br>Before anything else, I want to say <strong>I'm genuinely sorry.</strong><br><br>I know that sometimes my emotions become stronger than my ability to think clearly. I overthink, I react, and in those moments I may say or do things that hurt you. Today, I realise that I hurt someone who means so much to me, and that is something I never wanted to do.<br><br>I'm not writing this to justify my behaviour or make excuses. I want to take responsibility for it.<br><br>I know loving someone is not just about saying “I love you.” It's also about understanding, patience, respect, trust and making an effort to become better together.<br><br>I don't want my fears, overthinking or emotional reactions to become a reason for you to feel hurt or exhausted. I want to learn to communicate better, listen more, understand you and handle my emotions in a healthier way.<br><br><strong>I cannot promise that I'll become perfect overnight, but I can promise that I'll genuinely work on myself.</strong> Not just through words, but through my actions.<br><br>You deserve love that feels peaceful, safe and understanding. I want to become someone who adds happiness to your life, not unnecessary pain.<br><br>I'm sorry for the times I made things difficult for you.<br><br>I love you, and I don't want us to forget that we're on the same team.<br><br><strong>Your girl,<br>Apneet ❤️</strong></div><div class="stickers">🕊️ 💗 🧸</div></section>
-<section class="card"><div class="stickers">💐 💌 🦋</div><h2>A little love note for you</h2><div class="note">Heyyy, my favourite person… ❤️<br><br>If I could, I would wrap all my love into the biggest hug and send it straight to you. I love our little moments, our silly conversations, your smile, your hugs and the way a simple moment with you can make my whole day.<br><br>I don't need every day to be perfect. I just want us to keep understanding each other, choosing each other and making beautiful memories together. I want to celebrate your wins, support you on difficult days and keep finding reasons to laugh with you.<br><br>Even when I don't express it perfectly, please know that you are loved. So, here's a pocketful of kisses, a lifetime supply of hugs and one very clingy girl cheering for you. 😚<br><br><strong>I'm so lucky to have you in my little world. I love you, my Charan. ❤️</strong><div class="signature">— Your girl, Apneet 💋</div></div><div class="stickers">🐻‍❄️ 💞 🌸 🧸</div></section>
-<section class="card"><div class="stickers">💋 💗 💋</div><h2>A kiss, delivered personally</h2><p class="lead">Close your eyes for a second… here's a little kiss from me. 😘</p><button class="primary" onclick="playKiss()">Tap for your kiss 😘</button><p id="kissStatus" class="small" aria-live="polite"></p><audio id="kissAudio" src="assets/kiss.mp3" preload="auto"></audio><p class="small">A little kiss, recorded just for you. Play it whenever you need one. 💗</p></section>
-<section class="card"><div class="heart">♥</div><div class="stickers">🫂 🌷 💗</div><h2>One last thing…</h2><p class="lead">No matter how messy a day gets, I still want the little things with you — silly conversations, warm hugs, forehead kisses and choosing each other. ❤️</p><button class="secondary" onclick="sendHug()">Sending you a tight hug 🫂</button><p id="hugStatus" class="lead" aria-live="polite"></p><p class="small">Made with all my love, just for you.</p></section></div><footer>Made with love, from Your girl, Apneet. ❤️</footer></main>
+
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;font-family:'DM Sans',sans-serif;
+ background:linear-gradient(135deg,#fff0f5,#ffe0eb,#fff7fa);
+ color:#71394e;display:flex;align-items:center;justify-content:center;
+ padding:20px;overflow-x:hidden;
+}
+.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.heart{position:absolute;bottom:-40px;animation:floatUp 8s linear infinite;opacity:.55}
+@keyframes floatUp{to{transform:translateY(-115vh) rotate(30deg);opacity:0}}
+.container{width:100%;max-width:650px;position:relative;z-index:2}
+.slide{
+ display:none;background:#ffffffed;border:1px solid #f4cbd9;
+ border-radius:28px;padding:clamp(25px,6vw,48px);
+ text-align:center;box-shadow:0 15px 55px #a84e7020;
+ animation:appear .55s ease;
+}
+.slide.active{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+h1,h2{font-family:'Playfair Display',serif;color:#a34468}
+h1{font-size:clamp(32px,7vw,48px);margin:12px 0}
+h2{font-size:clamp(27px,6vw,36px);margin:12px 0 18px}
+p{font-size:16px;line-height:1.9}
+.big-emoji{font-size:65px;margin:8px}
+.small{color:#a66c81;font-size:14px}
+.letter{background:#fff5f8;border-radius:18px;padding:22px;text-align:left;line-height:1.9;margin:20px 0}
+button{
+ border:0;border-radius:999px;padding:14px 27px;margin:8px;
+ background:#d85f89;color:white;font-weight:700;font-size:15px;
+ cursor:pointer;box-shadow:0 6px 16px #d85f8930;transition:.2s;
+}
+button:hover{transform:translateY(-3px);background:#bd4772}
+button.secondary{background:#f8dce7;color:#99415f}
+.progress{display:flex;justify-content:center;gap:9px;margin:0 0 18px}
+.dot{width:9px;height:9px;border-radius:50%;background:#edc6d5}
+.dot.active{background:#cf5680;width:25px;border-radius:10px}
+.hug{font-size:100px;display:inline-block;animation:embrace 1.5s ease-in-out infinite alternate}
+@keyframes embrace{from{transform:scale(1)}to{transform:scale(1.13) rotate(-4deg)}}
+.kiss{font-size:85px;display:inline-block;animation:kiss 1.2s ease-in-out infinite}
+@keyframes kiss{50%{transform:scale(1.2) rotate(8deg)}}
+.footer{font-size:13px;color:#b17b90;margin-top:22px}
+</style>
+</head>
+<body>
+<div class="hearts" id="hearts"></div>
+
+<div class="container">
+ <div class="progress">
+  <span class="dot active"></span><span class="dot"></span>
+  <span class="dot"></span><span class="dot"></span>
+ </div>
+
+ <!-- SLIDE 1: APOLOGY -->
+ <section class="slide active">
+  <div class="big-emoji">🥺💗</div>
+  <p class="small">A little something from your girl</p>
+  <h1>I'm Sorry, My Charan</h1>
+  <div class="letter">
+   Hey my love,<br><br>
+   I know that sometimes my emotions take over my thoughts.
+   I overthink, react without thinking everything through, and
+   sometimes end up hurting you. I'm truly sorry for those moments.<br><br>
+   I don't want to make excuses for my actions. I want to take
+   responsibility and genuinely work on myself. I know I won't
+   become perfect overnight, but I promise to keep trying,
+   understanding you better and becoming a better partner.<br><br>
+   You matter to me, and so does the happiness and peace we
+   share. I hope we keep learning and growing together.
+   ❤️<br><br>
+   **Your girl, Apneet ❤️**
+  </div>
+  <button onclick="nextSlide(1)">A little more for you 💌</button>
+ </section>
+
+ <!-- SLIDE 2: LOVE NOTE -->
+ <section class="slide">
+  <div class="big-emoji">💌🌷</div>
+  <p class="small">A letter straight from my heart</p>
+  <h2>My Favourite Person</h2>
+  <div class="letter">
+   Heyyy, my favourite person… ❤️<br><br>
+   If I could, I would wrap all my love into the biggest hug and
+   send it straight to you. I love our little moments, our silly
+   conversations, your smile, your hugs and the way a simple
+   moment with you can make my whole day.<br><br>
+   I don't need every day to be perfect. I just want us to keep
+   understanding each other, choosing each other and making
+   beautiful memories together. I want to celebrate your wins,
+   support you on difficult days and keep finding reasons to
+   laugh with you.<br><br>
+   Even when I don't express it perfectly, please know that you
+   are loved. So, here's a pocketful of kisses, a lifetime supply
+   of hugs and one very clingy girl cheering for you. 😚<br><br>
+   I'm so lucky to have you in my little world. I love you,
+   my Charan. ❤️<br><br>
+   — Your girl, Apneet 💋
+  </div>
+  <button onclick="nextSlide(2)">I have a kiss for you 😘</button>
+ </section>
+
+ <!-- SLIDE 3: KISS -->
+ <section class="slide">
+  <div class="big-emoji">💕</div>
+  <p class="small">Something special, just for you</p>
+  <h2>Close Your Eyes...</h2>
+  <div class="kiss">😘</div>
+  <p>Imagine me giving you the sweetest little kiss.</p>
+  <p>And here's the real one, recorded just for you.</p>
+  <button onclick="playKiss()">Play my kiss 💋</button>
+  <p class="small" id="audioStatus">Tap to hear your little surprise.</p>
+  <audio id="kissAudio" src="assets/kiss.mp3" preload="auto"></audio>
+  <button class="secondary" onclick="nextSlide(3)">One last surprise 🫂</button>
+ </section>
+
+ <!-- SLIDE 4: HUG -->
+ <section class="slide">
+  <div class="big-emoji">💗✨</div>
+  <p class="small">The last little surprise</p>
+  <h2>A Very Big Hug For You!</h2>
+  <div class="hug">🫂</div>
+  <h2>Come Here, My Love!</h2>
+  <p>If I were with you right now, I'd hold you so tightly
+  and never want to let go. ❤️</p>
+  <p>Until I can hug you in person, here's an unlimited
+  supply of virtual hugs and kisses.</p>
+  <div class="big-emoji">🤗💋💞</div>
+  <h1>I Love You, My Charan!</h1>
+  <p>Always cheering for you, always wishing the best for you.</p>
+  <p><strong>Your girl, Apneet ❤️</strong></p>
+  <button onclick="nextSlide(0)">Read it all again 💗</button>
+  <div class="footer">Made with all my love, just for you.</div>
+ </section>
+</div>
+
 <script>
-function openSurprise(){document.getElementById('welcome').classList.add('hidden');document.getElementById('surprise').classList.remove('hidden');for(let i=0;i<22;i++)setTimeout(makeHeart,i*130);window.scrollTo({top:0,behavior:'smooth'});}
-function makeHeart(){const el=document.createElement('span');el.className='float';el.textContent=['♥','♡','💗','💕','🌸'][Math.floor(Math.random()*5)];el.style.left=Math.random()*100+'vw';el.style.fontSize=(18+Math.random()*24)+'px';el.style.animationDuration=(5+Math.random()*4)+'s';document.body.appendChild(el);setTimeout(()=>el.remove(),9500);}
-setInterval(()=>{if(!document.getElementById('surprise').classList.contains('hidden'))makeHeart()},1100);
-async function playKiss(){const a=document.getElementById('kissAudio'),s=document.getElementById('kissStatus');try{a.currentTime=0;await a.play();s.textContent='Mwahhhhh! A kiss from me to you. 😘❤️';}catch(e){s.textContent='Your kiss audio is not added yet. Add your recording as assets/kiss.mp3, then upload it to GitHub. 💗';}}
-function sendHug(){document.getElementById('hugStatus').textContent='Hug accepted? Come here… the tightest, warmest hug is waiting for you. 🫂❤️';for(let i=0;i<14;i++)setTimeout(makeHeart,i*100);}
-</script></body></html>
+let current=0;
+const slides=document.querySelectorAll('.slide');
+const dots=document.querySelectorAll('.dot');
+
+function nextSlide(n){
+ slides[current].classList.remove('active');
+ current=n;
+ slides[current].classList.add('active');
+ dots.forEach((d,i)=>d.classList.toggle('active',i===current));
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+
+async function playKiss(){
+ const audio=document.getElementById('kissAudio');
+ const status=document.getElementById('audioStatus');
+ try{
+  audio.currentTime=0;
+  await audio.play();
+  status.textContent='A kiss, just for you! 😘❤️';
+ }catch(e){
+  status.textContent='Please check that your kiss audio is uploaded in the assets folder.';
+ }
+}
+
+const heartBox=document.getElementById('hearts');
+const symbols=['💗','💕','💖','🌸','❤️'];
+for(let i=0;i<18;i++){
+ const h=document.createElement('span');
+ h.className='heart';
+ h.textContent=symbols[i%symbols.length];
+ h.style.left=Math.random()*100+'%';
+ h.style.animationDelay=Math.random()*8+'s';
+ h.style.fontSize=(15+Math.random()*17)+'px';
+ heartBox.appendChild(h);
+}
+</script>
+</body>
+</html>
